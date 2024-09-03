@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   // List of navigation items with href
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -9,6 +11,10 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+   const handleLogIn = () => {
+    navigate('/login');
+  };
+  
   return (
     <nav className=" p-2 bg-cofee_dark fixed top-0 w-full z-50">
     <div className="container mx-auto flex justify-between items-center">
@@ -32,7 +38,7 @@ const Navbar = () => {
 
       {/* Login Button */}
       <div className='flex flex-row gap-8'>
-        <button className="text-2xl text-white hover:text-cofee_dark hover:bg-cofee font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500">
+        <button className="text-2xl text-white hover:text-cofee_dark hover:bg-cofee font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500" onClick={handleLogIn}>
           Log In
         </button>
         {/* <button className="text-2xl text-white font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500">
