@@ -6,7 +6,14 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        cofee: '#F8EDE3',
+        cofee_dim: '#DFD3C3',
+        cofee_ligt: '#D0B8A8',
+        cofee_dark: '#8D493A',
+      },
+    },
   },
   plugins: [],
 }

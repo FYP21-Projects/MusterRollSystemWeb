@@ -10,20 +10,20 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gray-800 p-4 fixed top-0 w-full z-50">
+    <nav className=" p-2 bg-cofee_dark fixed top-0 w-full z-50">
     <div className="container mx-auto flex justify-between items-center">
       {/* Logo */}
-      <div className="text-white text-2xl font-bold">
+      <div className="text-cofee text-4xl font-bold">
         MRS
       </div>
 
       {/* Center Links */}
-      <div className="flex space-x-6">
+      <div className="flex gap-14 space-x-6">
         {navItems.map((item, index) => (
           <a
             key={index}
             href={item.href}
-            className="text-white hover:text-gray-400"
+            className="text-cofee_ligt text-2xl  font-bold hover:text-cofee_ligt transform translate hover:scale-105"
           >
             {item.name}
           </a>
@@ -31,10 +31,14 @@ const Navbar = () => {
       </div>
 
       {/* Login Button */}
-      <div>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <div className='flex flex-row gap-8'>
+        <button className="text-2xl text-white hover:text-cofee_dark hover:bg-cofee font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500">
           Log In
         </button>
+        {/* <button className="text-2xl text-white font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500">
+          Sign Up
+        </button>
+          */}
       </div>
     </div>
   </nav>
