@@ -5,6 +5,9 @@ import AboutPage from './AboutPage'
 import DataSynchronize from './DataSynchrnoize'
 import FacialReco from './FacialReco'
 
+import ContactUs from './ContactUs'
+import Footer from './Footer'
+
 function WelCome() {
     return (
         <>
@@ -13,6 +16,9 @@ function WelCome() {
         <AboutPage/>
         <DataSynchronize/>
         <FacialReco/>
+        <ContactUs/>
+        <Footer/>
+        
         </>
     )
 }
