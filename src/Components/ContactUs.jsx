@@ -4,20 +4,20 @@ import { faUser, faEnvelope, faPhone, faCommentDots } from '@fortawesome/free-so
 
 const ContactUs = () => {
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-3xl font-semibold text-center mb-4">Get in Touch</h2>
-      <p className="text-center mb-6">
-        Phone num: <a href="tel:+8298393638" className="text-blue-600">+8298393638</a>
+    <div className="flex flex-col justify-center items-center p-6 bg-cofee w-full shadow-md rounded-lg">
+      <h2 className="text-6xl text-cofee_dark font-semibold text-center mb-4">Get in Touch</h2>
+      <p className="text-center text-3xl mb-6">
+        Phone num: <a href="tel:+8298393638" className="text-cofee_dark text-2xl">+8298393638</a>
         <br />
         Email address: <a href="mailto:shweeta@gamil.com" className="text-blue-600">shweeta@gamil.com</a>
       </p>
-      <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
+      <div className="flex flex-col md:flex-row w-3/5  justify-center gap-4 mb-6">
         <div className="w-full md:w-1/2">
           <div className="relative mb-4">
             <FontAwesomeIcon icon={faUser} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              className="w-full pl-10 p-2 border border-gray-300 rounded-md"
+              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
               placeholder="Your Name"
             />
           </div>
@@ -25,7 +25,7 @@ const ContactUs = () => {
             <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="email"
-              className="w-full pl-10 p-2 border border-gray-300 rounded-md"
+              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
               placeholder="Your Email"
             />
           </div>
@@ -33,7 +33,7 @@ const ContactUs = () => {
             <FontAwesomeIcon icon={faPhone} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              className="w-full pl-10 p-2 border border-gray-300 rounded-md"
+              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
               placeholder="Your Contact"
             />
           </div>
@@ -42,7 +42,7 @@ const ContactUs = () => {
           <div className="relative">
             <FontAwesomeIcon icon={faCommentDots} className="absolute left-3 top-3 text-gray-400" />
             <textarea
-              className="w-full pl-10 p-2 border border-gray-300 rounded-md"
+              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
               placeholder="Description"
               rows="6"
             ></textarea>
@@ -50,7 +50,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="text-center ">
-        <button className="px-6  py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition">
+        <button className="px-6  py-2 bg-cofee_dark text-cofee_dim text-xl font-semibold rounded-md hover:bg-cofee_dim hover:text-cofee_dark transition">
           Send Message
         </button>
       </div>

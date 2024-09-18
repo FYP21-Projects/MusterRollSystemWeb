@@ -18,9 +18,7 @@ const AboutPage = () => {
         Capture Attendance while offline
       </h1>
       <p className="text-gray-700 text-3xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel 
-        risus in nisi vehicula dapibus. Nulla facilisi. Integer pretium nisl 
-        et mi condimentum, id dignissim leo pharetra.
+      With MRS, you don’t have to worry about dropped connections or slow loading. You can easily clock in and out using your phone or tablet, making it possible to track attendance even in remote areas or places with limited internet access.
       </p>
     </div>
   </div>
