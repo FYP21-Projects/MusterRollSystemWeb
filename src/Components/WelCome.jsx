@@ -7,6 +7,7 @@ import FacialReco from './FacialReco'
 
 import ContactUs from './ContactUs'
 import Footer from './Footer'
+import GpsTracking from './GpsTracking'
 
 function WelCome() {
     return (
@@ -16,6 +17,7 @@ function WelCome() {
         <AboutPage/>
         <DataSynchronize/>
         <FacialReco/>
+        <GpsTracking/>
         <ContactUs/>
         <Footer/>
         
