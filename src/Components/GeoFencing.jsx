@@ -1,4 +1,5 @@
 import React from 'react';
+import Geofencing from "../assets/Landing_pictures/Geofencing.webp"
 
 const GeoFencing = () => {
   return (
@@ -20,7 +21,7 @@ const GeoFencing = () => {
     {/* Left Div */}
     <div className="flex justify-around items-center md:w-1/2 p-8">
       <img 
-        src="https://via.placeholder.com/400" 
+        src={Geofencing} 
         alt="Placeholder"
         className="rounded-lg shadow-lg"
       />

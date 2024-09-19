@@ -1,5 +1,5 @@
 import React from 'react';
-
+import fypimages from '../assets/Landing_pictures/fypimages.png'
 const AboutPage = () => {
   return (
     <div className="bg-cofee blue-100 min-h-screen flex items-center justify-center">
@@ -7,7 +7,7 @@ const AboutPage = () => {
     {/* Left Div */}
     <div className="flex justify-around items-center md:w-1/2 p-8">
       <img 
-        src="https://via.placeholder.com/400" 
+        src={fypimages}
         alt="Placeholder"
         className="rounded-lg shadow-lg"
       />
