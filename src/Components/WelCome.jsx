@@ -18,6 +18,7 @@ function WelCome() {
         <DataSynchronize/>
         <FacialReco/>
         <GpsTracking/>
+        <GeoFencing/>
         <ContactUs/>
         <Footer/>
         

@@ -1,61 +1,93 @@
 import React from 'react';
 
 const Footer = () => {
-    return (
-        <footer className="bg-gray-800 text-white py-8">
-            <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
-                <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8">
-                    <div>
-                        <h6 className="text-orange-500 font-semibold mb-2">Product</h6>
-                        <ul className="space-y-1">
-                            <li><a href="#" className="hover:underline">Attendance Tracker</a></li>
-                            <li><a href="#" className="hover:underline">Time & Attendance Software</a></li>
-                            <li><a href="#" className="hover:underline">Time Clock Software</a></li>
-                            <li><a href="#" className="hover:underline">Timesheet App</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h6 className="text-orange-500 font-semibold mb-2">Resources</h6>
-                        <ul className="space-y-1">
-                            <li><a href="#" className="hover:underline">Timesheet Calculator</a></li>
-                            <li><a href="#" className="hover:underline">Timesheet Templates</a></li>
-                        </ul>
-                    </div>
-                </div>
+  return (
+    <footer className="bg-cofee_dark text-gray-800 py-10">
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Contact Info */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-cofee_ligt">Viabletree</h3>
+          <p>+92 227891987</p>
+          <p>
+            <a
+              href="mailto:hello@MRs.com"
+              className="text-cofee hover:underline"
+            >
+              hello@MRS.com
+            </a>
+          </p>
+          <div className="flex space-x-4">
+            <a
+              href="https://facebook.com"
+              className="text-cofee hover:text-cofee_ligt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              className="text-cofee hover:text-cofee_ligt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              className="text-cofee hover:text-cofee_ligt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
 
-                <div className='flex flex-col justify-start'>
-                    <div className="text-center lg:text-left mt-8 lg:mt-0">
-                        <h6 className="font-semibold mb-2">Jibble</h6>
-                        <p>Maximize your team's productivity today</p>
-                    </div>
+        {/* Solutions Section */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-cofee_ligt">Solutions</h3>
+          <ul className="space-y-2">
+            <li>Geo-Fencing</li>
+            <li>Image Capturing</li>
+            <li>face Recognization</li>
+            <li>Data Synchronization</li>
+            
+            
+          </ul>
+        </div>
 
-                    <div className="flex flex-col items-center lg:items-end space-y-4 mt-8 lg:mt-0">
-                        <div className="flex space-x-4">
-                            <img src="app-store-icon.png" alt="App Store" className="h-10" />
-                            <img src="google-play-icon.png" alt="Google Play" className="h-10" />
-                            <img src="chrome-web-store-icon.png" alt="Chrome Web Store" className="h-10" />
-                            <img src="microsoft-store-icon.png" alt="Microsoft Store" className="h-10" />
-                        </div>
+        {/* Quick Links Section */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-cofee_ligt">Quick Links</h3>
+          <ul className="space-y-2">
+            <li>
+              <a href="#" className="hover:underline">
+                About
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" className="hover:underline">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
 
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-blue-500 hover:underline">LinkedIn</a>
-                            <a href="#" className="text-blue-700 hover:underline">Facebook</a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div className="container mx-auto px-4 mt-8 text-center lg:text-left">
-                <p className="text-gray-400">&copy; 2024 Jibble Group. 3790 El Camino Real, Palo Alto, CA 94306, USA</p>
-                <div className="flex justify-center lg:justify-start space-x-4 mt-2">
-                    <a href="#" className="hover:underline">Terms & Conditions</a>
-                    <a href="#" className="hover:underline">Privacy Policy</a>
-                </div>
-            </div>
-        </footer>
-    );
+        {/* Core Services Section */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-cofee_ligt">Core Services</h3>
+          <ul className="space-y-2">
+            <li>Web Application Development</li>
+            <li>Mobile App Development</li>
+            <li>Website Development</li>
+            
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
