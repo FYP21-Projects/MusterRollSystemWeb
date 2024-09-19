@@ -7,6 +7,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="space-y-4">
           <h3 className="text-xl font-bold text-cofee_ligt">Viabletree</h3>
+          <div className="space-y-4 text-xl font-bold text-cofee_ligt" >
           <p>+92 227891987</p>
           <p>
             <a
@@ -16,6 +17,7 @@ const Footer = () => {
               hello@MRS.com
             </a>
           </p>
+
           <div className="flex space-x-4">
             <a
               href="https://facebook.com"
@@ -42,12 +44,13 @@ const Footer = () => {
               <i className="fab fa-twitter"></i>
             </a>
           </div>
+          </div>
         </div>
 
         {/* Solutions Section */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-cofee_ligt">Solutions</h3>
-          <ul className="space-y-2">
+          <h3 className="text-3xl font-bold text-cofee">Solutions</h3>
+          <ul className="space-y-2 text-xl text-cofee_ligt">
             <li>Geo-Fencing</li>
             <li>Image Capturing</li>
             <li>face Recognization</li>
@@ -59,8 +62,8 @@ const Footer = () => {
 
         {/* Quick Links Section */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-cofee_ligt">Quick Links</h3>
-          <ul className="space-y-2">
+          <h3 className="text-3xl font-bold text-cofee">Quick Links</h3>
+          <ul className="space-y-2 text-xl text-cofee_ligt">
             <li>
               <a href="#" className="hover:underline">
                 About
@@ -77,8 +80,8 @@ const Footer = () => {
 
         {/* Core Services Section */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-cofee_ligt">Core Services</h3>
-          <ul className="space-y-2">
+          <h3 className="text-3xl font-bold text-cofee ">Core Services</h3>
+          <ul className="space-y-2 text-xl text-cofee_ligt" >
             <li>Web Application Development</li>
             <li>Mobile App Development</li>
             <li>Website Development</li>

@@ -8,6 +8,7 @@ import FacialReco from './FacialReco'
 import ContactUs from './ContactUs'
 import Footer from './Footer'
 import GpsTracking from './GpsTracking'
+import GeoFencing from './GeoFencing'
 
 function WelCome() {
     return (
