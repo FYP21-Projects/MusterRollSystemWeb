@@ -2,8 +2,14 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
+  const navigate = useNavigate();
+
+  const handleLogIn = () => {
+    navigate('/AdminDashboard');
+  };
   return (
     <>
     <Navbar/>
@@ -53,6 +59,7 @@ const LogIn = () => {
             <button
               type="submit"
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-white hover:text-cofee_dark hover:font-bold bg-cofee_dark hover:bg-cofee_dim focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              onClick={handleLogIn}
             >
               Log In
             </button>
