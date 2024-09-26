@@ -12,7 +12,7 @@ const GeoFencing = () => {
         Uninteruppted GeoFencing
       </h1>
       
-      <p className="text-gray-700 text-3xl">
+      <p className="text-gray-700 text-2xl">
         Location-based Accuracy!<br></br>
       MRS makes sure employees can only clock in or out from specific, set locations, even in remote areas. You'll always know where your team is working and get alerts if anyone tries to clock in from outside the allowed area.
 

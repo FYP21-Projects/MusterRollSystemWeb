@@ -1,5 +1,6 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
+import Profilepic from "D://FYP Materials//MusterRollSystemWeb//src/assets//profilepic.jpg";
 
 import {
   FaCalendarAlt,
@@ -12,7 +13,7 @@ const DbMainPage = () => {
   return (
     <div className="flex w-full">
       {/* Main content area - 80% width */}
-      <div className="w-4/5 bg-gray-50 p-6">
+      <div className="w-full bg-cofee p-6">
         {/* Greeting and Calendar Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Greeting */}
@@ -21,7 +22,7 @@ const DbMainPage = () => {
               <h1 className="text-2xl font-semibold">Hi, Lokesh</h1>
               <p className="text-gray-500">Good Morning, Have a good day</p>
             </div>
-            <img src="" alt="Morning Illustration" className="h-24" />
+            <img src={Profilepic} alt="Morning Illustration" className="h-24" />
           </div>
 
           {/* Calendar */}
@@ -68,14 +69,14 @@ const DbMainPage = () => {
               <span>28</span>
             </div>
 
-            <div className="flex justify-between items-center mt-4">
+            {/* <div className="flex justify-between items-center mt-4">
               <button className="bg-orange-400 text-white px-4 py-2 rounded-lg">
                 Create Plan
               </button>
               <button className="bg-orange-400 text-white px-4 py-2 rounded-lg">
                 Outing
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -84,26 +85,26 @@ const DbMainPage = () => {
           <h2 className="text-xl font-bold mb-4">Quick Status</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* View Attendance */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center transform scale-105 w-96 h-72 ">
-              <FaRegFileAlt className="text-orange-400 text-4xl" />
+            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+              <FaRegFileAlt className="text-cofee_dark text-4xl" />
               <div className="ml-4">
-                <h3 className="text-2xl font-semibold">View Attendance</h3>
+                <h4 className="text-2xl font-semibold">View Attendance</h4>
                 <p className="text-gray-500">Check attendance records.</p>
               </div>
             </div>
 
             {/* Leave */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center transform scale-105">
-              <FaCalendarAlt className="text-orange-400 text-4xl" />
+            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+              <FaCalendarAlt className="text-cofee_dark text-4xl" />
               <div className="ml-4">
                 <h3 className="text-2xl font-semibold">Leave</h3>
-                <p className="text-red-500">Denied</p>
+                <p className="text-cofee_ligt">Denied</p>
               </div>
             </div>
 
             {/* Employee Info */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center transform scale-105">
-              <FaUserEdit className="text-orange-400 text-4xl" />
+            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+              <FaUserEdit className="text-cofee_dark text-4xl" />
               <div className="ml-4">
                 <h3 className="text-2xl font-semibold">Employee Info</h3>
                 <p className="text-gray-500">Edit employee information.</p>
@@ -111,8 +112,8 @@ const DbMainPage = () => {
             </div>
 
             {/* Add Employee */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center transform scale-105">
-              <FaUserPlus className="text-orange-400 text-4xl" />
+            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+              <FaUserPlus className="text-cofee_dark text-4xl" />
               <div className="ml-4">
                 <h3 className="text-2xl font-semibold">Add Employee</h3>
                 <p className="text-gray-500">Add new employee records.</p>

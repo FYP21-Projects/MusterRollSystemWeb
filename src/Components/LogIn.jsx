@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
+import LoginImg from "../assets/LoginImg.png"
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -17,12 +18,12 @@ const LogIn = () => {
       {/* Left Side */}
       <div className="w-1/2 bg-cofee_ligt flex flex-col items-center justify-center p-8">
         <img 
-          src="your-image-url-here" 
+          src={LoginImg} 
           alt="Login Image" 
           className="mb-6 w-full max-w-xs h-auto"
         />
-        <h1 className="text-cofee_dark text-6xl font-bold">Welcome Back!</h1>
-        <p className="text-gray-700 text-3xl mt-4">
+        <h1 className="text-cofee_dark text-4xl font-bold">Welcome Back!</h1>
+        <p className="text-gray-700 text-xl mt-4">
           We are glad to see you again. Please log in to your account.
         </p>
       </div>
