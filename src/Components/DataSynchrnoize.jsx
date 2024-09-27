@@ -11,7 +11,7 @@ const DataSynchronize = () => {
         To Data Synchronize
       </h1>
       
-      <p className="text-gray-700 text-3xl">
+      <p className="text-gray-700 text-2xl">
       MRS automatically syncs attendance data once you're connected, sending locally saved records to the server. This keeps your records updated and removes the need for manual data entry.
 
       </p>

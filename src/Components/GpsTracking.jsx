@@ -11,7 +11,7 @@ const GpsTracking = () => {
        Gps Tracking Accuracy
       </h1>
       
-      <p className="text-gray-700 text-3xl">
+      <p className="text-gray-700 text-2xl">
       all without needing the internet!<br></br>
 No matter where your team is or how far they go, MRS keeps you informed by accurately tracking their GPS locations, even without a connection.
 
