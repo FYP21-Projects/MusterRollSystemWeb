@@ -5,7 +5,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   // List of navigation items with href
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
@@ -38,7 +38,7 @@ const Navbar = () => {
 
       {/* Login Button */}
       <div className='flex flex-row gap-8'>
-        <button className="text-2xl text-white hover:text-cofee_dark hover:bg-cofee font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500" onClick={handleLogIn}>
+        <button className="text-2xl text-white hover:text-cofee_dark hover:bg-cofee font-bold  py-1 px-3 border border-cofee rounded-3xl " onClick={handleLogIn}>
           Log In
         </button>
         {/* <button className="text-2xl text-white font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500">
