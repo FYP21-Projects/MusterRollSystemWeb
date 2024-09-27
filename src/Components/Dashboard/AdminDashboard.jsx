@@ -7,6 +7,7 @@ import AddEmply from "./AddEmply";
 import EmplyInfo from "./EmplyInfo";
 import UpdtEmply from "./UpdtEmply";
 import LeaveManag from "./LeaveManag";
+import AttendanceSummary from "./AttendanceSummary";
 
 function AdminDashboard() {
   return (
@@ -19,6 +20,7 @@ function AdminDashboard() {
       <EmplyInfo />
       <UpdtEmply /> */}
       {/* <LeaveManag /> */}
+      <AttendanceSummary />
     </>
   );
 }
