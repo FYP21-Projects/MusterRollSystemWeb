@@ -36,7 +36,6 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-
         {/* Login Button */}
         <div className="flex flex-row gap-8">
           <button
@@ -45,10 +44,8 @@ const Navbar = () => {
           >
             Log In
           </button>
-          {/* <button className="text-2xl text-white font-bold text-white text-2xl font-bold py-1 px-3 border border-cofee rounded-3xl text-slate-500">
-          Sign Up
-        </button>
-          */}
+
+     
         </div>
       </div>
     </nav>
