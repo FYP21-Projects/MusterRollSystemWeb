@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCaretDown } from "@fortawesome/free-solid-svg-icons"; // Importing user and dropdown icons
-import MainLogo from "D:/FYP Materials/MusterRollSystemWeb/src/assets/MainLogo.jpg";
+import MainLogo from "../../assets/MainLogo.jpg";
 const DbHeader = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 

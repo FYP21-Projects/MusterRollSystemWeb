@@ -1,6 +1,6 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
-import Profilepic from "D://FYP Materials//MusterRollSystemWeb//src/assets//profilepic.jpg";
+import Profilepic from "../../assets/profilepic.jpg";
 
 import {
   FaCalendarAlt,
