@@ -1,6 +1,7 @@
 import React from 'react';
+import Geofencing from "../assets/Landing_pictures/Geofencing.webp"
 
-const DataSynchronize = () => {
+const GeoFencing = () => {
   return (
     <div className="bg-cofee blue-100 min-h-screen flex items-center justify-center">
   <div className="flex flex-col justify-around md:flex-row w-full max-w-6xl">
@@ -8,18 +9,19 @@ const DataSynchronize = () => {
     {/* Right Div */}
     <div className="flex flex-col justify-around items-center text-center md:w-1/2 p-8">
       <h1 className="text-5xl font-bold text-cofee_dark mb-4">
-        To Data Synchronize
+        Uninteruppted GeoFencing
       </h1>
       
       <p className="text-gray-700 text-3xl">
-      MRS automatically syncs attendance data once you're connected, sending locally saved records to the server. This keeps your records updated and removes the need for manual data entry.
+        Location-based Accuracy!<br></br>
+      MRS makes sure employees can only clock in or out from specific, set locations, even in remote areas. You'll always know where your team is working and get alerts if anyone tries to clock in from outside the allowed area.
 
       </p>
     </div>
     {/* Left Div */}
     <div className="flex justify-around items-center md:w-1/2 p-8">
       <img 
-        src="https://via.placeholder.com/400" 
+        src={Geofencing} 
         alt="Placeholder"
         className="rounded-lg shadow-lg"
       />
@@ -29,4 +31,4 @@ const DataSynchronize = () => {
   );
 };
 
-export default DataSynchronize;
+export default GeoFencing;

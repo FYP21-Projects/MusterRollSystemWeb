@@ -5,6 +5,11 @@ import AboutPage from './AboutPage'
 import DataSynchronize from './DataSynchrnoize'
 import FacialReco from './FacialReco'
 
+import ContactUs from './ContactUs'
+import Footer from './Footer'
+import GpsTracking from './GpsTracking'
+import GeoFencing from './GeoFencing'
+
 function WelCome() {
     return (
         <>
@@ -13,6 +18,11 @@ function WelCome() {
         <AboutPage/>
         <DataSynchronize/>
         <FacialReco/>
+        <GpsTracking/>
+        <GeoFencing/>
+        <ContactUs/>
+        <Footer/>
+        
         </>
     )
 }

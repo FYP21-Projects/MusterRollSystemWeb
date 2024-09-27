@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DataSynchronize = () => {
+const GpsTracking = () => {
   return (
     <div className="bg-cofee blue-100 min-h-screen flex items-center justify-center">
   <div className="flex flex-col justify-around md:flex-row w-full max-w-6xl">
@@ -8,11 +8,18 @@ const DataSynchronize = () => {
     {/* Right Div */}
     <div className="flex flex-col justify-around items-center text-center md:w-1/2 p-8">
       <h1 className="text-5xl font-bold text-cofee_dark mb-4">
-        To Data Synchronize
+       Gps Tracking Accuracy
       </h1>
       
       <p className="text-gray-700 text-3xl">
-      MRS automatically syncs attendance data once you're connected, sending locally saved records to the server. This keeps your records updated and removes the need for manual data entry.
+      all without needing the internet!<br></br>
+No matter where your team is or how far they go, MRS keeps you informed by accurately tracking their GPS locations, even without a connection.
+
+
+
+
+
+
 
       </p>
     </div>
@@ -29,4 +36,4 @@ const DataSynchronize = () => {
   );
 };
 
-export default DataSynchronize;
+export default GpsTracking;

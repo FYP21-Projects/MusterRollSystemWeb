@@ -8,10 +8,8 @@ const LandingPage = () => {
         <h1 className="text-7xl font-bold text-cofee_dark mb-4">
           Muster Roll System
         </h1>
-        <p className="text-gray-700 text-4xl mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel 
-          risus in nisi vehicula dapibus. Nulla facilisi. Integer pretium nisl 
-          et mi condimentum, id dignissim leo pharetra.
+        <p className="text-gray-700 text-2xl mb-6">
+        Managing workforce attendance and payroll has never been easier! Our Muster Roll System is designed to streamline the process of tracking employee attendance, work hours, and payroll management, all in one integrated platform.
         </p>
         <button className="bg-cofee_dark w-40 text-2xl mt-10 text-cofee hover:scale-105 hover:shadow-lg hover:shadow-cofee_dark font-bold py-2 px-4 rounded-full">
           See More
