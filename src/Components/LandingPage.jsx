@@ -24,7 +24,7 @@ const LandingPage = () => {
       <div className="flex justify-center items-center md:w-2/3 p-8">
         <img
           src={MainPage}
-          alt="Placeholder"
+          alt="main page"
           className="rounded-lg shadow-lg"
         />
       </div>
