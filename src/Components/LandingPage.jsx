@@ -6,10 +6,10 @@ const LandingPage = () => {
     <div className="flex bg-cofee flex-col md:flex-row h-screen items-center justify-center">
       {/* Left Div */}
       <div className="flex flex-col justify-start ml-8 text-start md:w-1/2 p-8">
-        <h1 className="text-7xl font-bold text-cofee_dark mb-4">
+        <h1 className="text-5xl font-bold text-cofee_dark mb-4 mt-8">
           Muster Roll System
         </h1>
-        <p className="text-gray-700 text-2xl mb-6">
+        <p className="text-gray-700 text-xl mb-6 ">
           Managing workforce attendance and payroll has never been easier! Our
           Muster Roll System is designed to streamline the process of tracking
           employee attendance, work hours, and payroll management, all in one
