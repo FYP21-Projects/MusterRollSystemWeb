@@ -40,12 +40,12 @@ const DbAside = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-1/5 h-screen bg-cofee_ligt p-4">
+        <aside className="w-1/5 h-screen bg-cofee_ligt p-3">
           {/* Overview Section */}
-          <div className="mb-8 border border-cofee_dark p-4 rounded-lg">
+          <div className="mb-6 border border-cofee_dark p-3 rounded-lg">
             <h3 className="text-cofee_dark mb-4 text-xl">Overview</h3>
             <ul>
               <li className="mb-2">
@@ -61,7 +61,7 @@ const DbAside = () => {
           </div>
 
           {/* Manage Attendance */}
-          <div className="mb-8 border border-cofee_dark p-4 rounded-lg">
+          <div className="mb-6 border border-cofee_dark p-3 rounded-lg">
             <h3 className="text-cofee_dark text-xl mb-4">Manage Attendance</h3>
             <ul>
               <li className="mb-2">
@@ -86,7 +86,7 @@ const DbAside = () => {
           </div>
 
           {/* Manage Employee */}
-          <div className="mb-8 border border-cofee_dark p-4 rounded-lg">
+          <div className="mb-6 border border-cofee_dark p-3 rounded-lg">
             <h3 className="text-cofee_dark text-xl mb-4">Manage Employee</h3>
             <ul>
               <li className="mb-2">
@@ -120,7 +120,7 @@ const DbAside = () => {
           </div>
 
           {/* Settings Section */}
-          <div className="border border-cofee_dark p-4 rounded-lg">
+          <div className="border border-cofee_dark p-3 rounded-lg">
             <h3 className="text-cofee_dark text-xl mb-4">Settings</h3>
             <ul>
               <li className="mb-2">

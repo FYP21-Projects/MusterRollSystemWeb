@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCaretDown, faBell, faMoon, faSun } from "@fortawesome/free-solid-svg-icons"; // Importing user, dropdown, notification, and theme icons
+import { faUser, faCaretDown } from "@fortawesome/free-solid-svg-icons"; // Importing user and dropdown icons
 import MainLogo from "../../assets/MainLogo.jpg";
-
 const DbHeader = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [notifications, setNotifications] = useState(3); // Example notification count
-  const [isDarkMode, setIsDarkMode] = useState(true); // Initial state for dark mode
 
   // Navigation links array
   const navLinks = [
@@ -18,26 +15,11 @@ const DbHeader = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  // Function to toggle between light and dark mode
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
-  // Apply the current theme to the body element
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
-
   return (
-    <header className="bg-cofee_dark dark:bg-gray-800 text-white shadow-md p-4 flex justify-around items-center">
+    <header className="bg-cofee_dark text-white shadow-md p-2 flex justify-around items-center">
       {/* Left: Website Logo */}
       <div className="flex flex-row text-2xl font-bold">
-        <img src={MainLogo} alt="Main Logo" className="h-14 w-36" />
+        <img src={MainLogo} alt="" className="h-12 w-32" />
       </div>
 
       {/* Center: Navbar */}
@@ -45,7 +27,7 @@ const DbHeader = () => {
         <ul className="flex space-x-6">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <a href={link.href} className="text-2xl hover:text-gray-400">
+              <a href={link.href} className="text-xl hover:text-gray-400">
                 {link.name}
               </a>
             </li>
@@ -53,33 +35,13 @@ const DbHeader = () => {
         </ul>
       </nav>
 
-      {/* Right: Notification, Theme Switcher, Profile Picture, and Dropdown */}
-      <div className="relative flex items-center space-x-6">
-        {/* Notification Icon */}
-        <div className="relative">
-          <FontAwesomeIcon icon={faBell} className="text-white h-8 w-8 cursor-pointer" />
-          {notifications > 0 && (
-            <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1.5">
-              {notifications}
-            </span>
-          )}
-        </div>
-
-        {/* Theme Switcher */}
-        <button
-          onClick={toggleTheme}
-          className="focus:outline-none text-white h-8 w-8"
-          aria-label="Toggle Theme"
-        >
-          <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} className="text-2xl" />
-        </button>
-
-        {/* Profile Picture and Dropdown */}
+      {/* Right: Profile Picture and Dropdown */}
+      <div className="relative flex items-center space-x-2">
         <button
           onClick={toggleDropdown}
           className="focus:outline-none flex items-center space-x-2"
         >
-          <FontAwesomeIcon icon={faUser} className="h-10 w-10 text-white" />
+          <FontAwesomeIcon icon={faUser} className="h-8 w-8 text-white" />
           <FontAwesomeIcon icon={faCaretDown} className="text-white" />
         </button>
         {dropdownOpen && (
