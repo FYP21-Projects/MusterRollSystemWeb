@@ -12,18 +12,17 @@ import GeoFencing from './GeoFencing'
 
 function WelCome() {
     return (
-        <>
-        <Navbar/>
-        <LandingPage/>
-        <AboutPage/>
-        <DataSynchronize/>
-        <FacialReco/>
-        <GpsTracking/>
-        <GeoFencing/>
-        <ContactUs/>
-        <Footer/>
-        
-        </>
+        <div>
+            <Navbar />
+            <LandingPage />
+            <AboutPage />
+            <DataSynchronize />
+            <FacialReco />
+            <GpsTracking />
+            <GeoFencing />
+            <ContactUs />
+            <Footer />
+        </div>
     )
 }
 

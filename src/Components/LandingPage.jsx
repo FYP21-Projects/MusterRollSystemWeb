@@ -21,14 +21,15 @@ const LandingPage = () => {
       </div>
 
       {/* Right Div */}
-      <div className="flex justify-center items-center md:w-2/3 p-8">
+      <div className="flex justify-center items-center md:w-1/2 p-8">
         <img
           src={MainPage}
           alt="main page"
-          className="rounded-lg shadow-lg"
+          className="rounded-lg shadow-lg w-3/5 mt-11 h-auto object-cover"
         />
       </div>
     </div>
+
   );
 };
 
