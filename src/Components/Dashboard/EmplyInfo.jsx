@@ -144,9 +144,9 @@ const EmplyInfo = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex justify-between">
-            <button className="bg-cofee_dark text-white py-2 px-4 rounded-md shadow-sm hover:bg-cofee_ligt focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400">
+            {/* <button className="bg-cofee_dark text-white py-2 px-4 rounded-md shadow-sm hover:bg-cofee_ligt focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400">
               Edit Info
-            </button>
+            </button> */}
             <button className="bg-cofee_dark text-white py-2 px-4 rounded-md shadow-sm hover:bg-cofee_ligt focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-400">
               Delete Employee
             </button>
