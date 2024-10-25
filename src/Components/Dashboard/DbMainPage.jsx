@@ -8,6 +8,8 @@ import {
   FaRegFileAlt,
   FaUserEdit,
 } from "react-icons/fa";
+import AttendanceSummary from "./AttendanceSummary";
+import KeyMetrics from "./KeyMetrics";
 
 const DbMainPage = () => {
   return (
@@ -81,45 +83,63 @@ const DbMainPage = () => {
         </div>
 
         {/* Quick Status Section */}
-        <div className="mt-8">
-          <h2 className="text-xl font-bold mb-4">Quick Status</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* View Attendance */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
-              <FaRegFileAlt className="text-cofee_dark text-4xl" />
-              <div className="ml-4">
-                <h4 className="text-2xl font-semibold">View Attendance</h4>
-                <p className="text-gray-500">Check attendance records.</p>
-              </div>
-            </div>
+        <div className="flex mt-8">
+          {/* Main Div */}
+          <div className="flex-grow mr-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {/* First Row: View Attendance and Leave */}
+              <div className="flex flex-col">
+                {/* View Attendance */}
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6">
+                  <FaRegFileAlt className="text-cofee_dark text-4xl" />
+                  <div className="ml-4">
+                    <h4 className="text-2xl font-semibold">View Attendance</h4>
+                    <p className="text-gray-500">Check attendance records.</p>
+                  </div>
+                </div>
 
-            {/* Leave */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
-              <FaCalendarAlt className="text-cofee_dark text-4xl" />
-              <div className="ml-4">
-                <h3 className="text-2xl font-semibold">Leave</h3>
-                <p className="text-cofee_ligt">Denied</p>
+                {/* Leave */}
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+                  <FaCalendarAlt className="text-cofee_dark text-4xl" />
+                  <div className="ml-4">
+                    <h3 className="text-2xl font-semibold">Leave</h3>
+                    <p className="text-cofee_ligt">Denied</p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            {/* Employee Info */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
-              <FaUserEdit className="text-cofee_dark text-4xl" />
-              <div className="ml-4">
-                <h3 className="text-2xl font-semibold">Employee Info</h3>
-                <p className="text-gray-500">Edit employee information.</p>
-              </div>
-            </div>
+              {/* Second Row: Employee Info and Add Employee */}
+              <div className="flex flex-col">
+                {/* Employee Info */}
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6">
+                  <FaUserEdit className="text-cofee_dark text-4xl" />
+                  <div className="ml-4">
+                    <h3 className="text-2xl font-semibold">Employee Info</h3>
+                    <p className="text-gray-500">Edit employee information.</p>
+                  </div>
+                </div>
 
-            {/* Add Employee */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
-              <FaUserPlus className="text-cofee_dark text-4xl" />
-              <div className="ml-4">
-                <h3 className="text-2xl font-semibold">Add Employee</h3>
-                <p className="text-gray-500">Add new employee records.</p>
+                {/* Add Employee */}
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+                  <FaUserPlus className="text-cofee_dark text-4xl" />
+                  <div className="ml-4">
+                    <h3 className="text-2xl font-semibold">Add Employee</h3>
+                    <p className="text-gray-500">Add new employee records.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Key Metrics Div */}
+          <div className="w-1/3">
+            <KeyMetrics />
+          </div>
+        </div>
+
+        <div className="flex ">
+          <AttendanceSummary />
+          {/* <KeyMetrics/> */}
         </div>
       </div>
     </div>

@@ -15,14 +15,6 @@ function AdminDashboard() {
     <>
       <DbHeader />
       <DbAside />
-      {/* <DbMainPage />
-      <ViewAttnd />
-      <AddEmply />
-      <EmplyInfo />
-      <UpdtEmply /> */}
-      {/* <LeaveManag /> */}
-      <AttendanceSummary />
-      <KeyMetrics />
     </>
   );
 }
