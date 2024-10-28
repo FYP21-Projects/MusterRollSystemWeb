@@ -26,16 +26,17 @@ const DbHeader = () => {
 
       {/* Center: Navbar */}
       <nav>
-        <ul className="flex space-x-6">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <a href={link.href} className="text-xl hover:text-gray-400">
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+  <ul className="flex space-x-6">
+    {navLinks.map((link, index) => (
+      <li key={index} className="transform transition duration-300 hover:scale-105">
+        <a href={link.href} className="text-xl">
+          {link.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
 
       {/* Right: Profile Picture and Dropdown */}
       <div className="relative flex items-center space-x-2">
