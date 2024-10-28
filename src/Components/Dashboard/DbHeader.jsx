@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCaretDown } from "@fortawesome/free-solid-svg-icons"; // Importing user and dropdown icons
 import MainLogo from "../../assets/MainLogo.jpg";
+import Logo from "../../assets/logo.png"
 const DbHeader = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -19,7 +20,7 @@ const DbHeader = () => {
     <header className="bg-cofee_dark text-white shadow-md p-2 flex justify-around items-center">
       {/* Left: Website Logo */}
       <div className="flex flex-row text-2xl font-bold">
-        <img src={MainLogo} alt="" className="h-12 w-32" />
+        <img src={Logo} alt="Logo" className="h-12 w-32" />
       </div>
 
       {/* Center: Navbar */}

@@ -148,7 +148,7 @@ const DbAside = () => {
         {/* Main content area */}
         <main className="w-4/5 p-4">{renderSelectedPage()}</main>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

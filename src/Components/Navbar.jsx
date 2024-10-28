@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MainLogo from "../assets/MainLogo.jpg";
+import Logo from "../assets/logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Make sure to install @fortawesome/react-fontawesome
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 
@@ -30,7 +31,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-cofee text-3xl font-bold">
-          <img className="w-32" src={MainLogo} alt="logo" />
+          <img className="w-32" src={Logo} alt="logo" />
         </div>
 
         {/* Center Links for large screens */}
