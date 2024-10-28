@@ -14,7 +14,9 @@ function AdminDashboard() {
   return (
     <>
       <DbHeader />
-      <DbAside />
+      <div className="flex pt-16 w-full">
+        <DbAside />
+      </div>
     </>
   );
 }
