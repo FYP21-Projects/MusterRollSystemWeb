@@ -19,7 +19,7 @@ const DbMainPage = () => {
         {/* Greeting and Calendar Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Greeting */}
-          <div className="bg-white shadow-md rounded-lg p-6 flex items-center justify-between h-56">
+          <div className="bg-white shadow-md rounded-lg p-6 flex items-center justify-between h-56 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
             <div>
               <h1 className="text-2xl font-semibold">Hi, Lokesh</h1>
               <p className="text-gray-500">Good Morning, Have a good day</p>
@@ -28,7 +28,7 @@ const DbMainPage = () => {
           </div>
 
           {/* Calendar */}
-          <div className="bg-white shadow-md rounded-lg p-6 h-56">
+          <div className="bg-white shadow-md rounded-lg p-6 h-56 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
             <h2 className="text-xl font-semibold mb-4">Calendar</h2>
             <div className="grid grid-cols-7 gap-2 text-center text-sm">
               {/* Weekdays */}
@@ -90,7 +90,7 @@ const DbMainPage = () => {
               {/* First Row: View Attendance and Leave */}
               <div className="flex flex-col">
                 {/* View Attendance */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6">
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
                   <FaRegFileAlt className="text-cofee_dark text-4xl" />
                   <div className="ml-4">
                     <h4 className="text-2xl font-semibold">View Attendance</h4>
@@ -98,8 +98,9 @@ const DbMainPage = () => {
                   </div>
                 </div>
 
+
                 {/* Leave */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
                   <FaCalendarAlt className="text-cofee_dark text-4xl" />
                   <div className="ml-4">
                     <h3 className="text-2xl font-semibold">Leave</h3>
@@ -111,7 +112,7 @@ const DbMainPage = () => {
               {/* Second Row: Employee Info and Add Employee */}
               <div className="flex flex-col">
                 {/* Employee Info */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6">
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48  mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
                   <FaUserEdit className="text-cofee_dark text-4xl" />
                   <div className="ml-4">
                     <h3 className="text-2xl font-semibold">Employee Info</h3>
@@ -120,7 +121,7 @@ const DbMainPage = () => {
                 </div>
 
                 {/* Add Employee */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48">
+                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
                   <FaUserPlus className="text-cofee_dark text-4xl" />
                   <div className="ml-4">
                     <h3 className="text-2xl font-semibold">Add Employee</h3>
