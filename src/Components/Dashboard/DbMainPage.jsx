@@ -11,7 +11,7 @@ import {
 import AttendanceSummary from "./AttendanceSummary";
 import KeyMetrics from "./KeyMetrics";
 
-const DbMainPage = () => {
+const DbMainPage = ({ username }) => {
   return (
     <div className="flex w-full">
       {/* Main content area - 80% width */}
@@ -21,7 +21,7 @@ const DbMainPage = () => {
           {/* Greeting */}
           <div className="bg-white shadow-md rounded-lg p-6 flex items-center justify-between h-56 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
             <div>
-              <h1 className="text-2xl font-semibold">Hi, Lokesh</h1>
+              <h1 className="text-2xl font-semibold">Hi, {username}</h1>
               <p className="text-gray-500">Good Morning, Have a good day</p>
             </div>
             <img src={Profilepic} alt="Morning Illustration" className="h-24" />
