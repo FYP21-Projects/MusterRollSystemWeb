@@ -133,14 +133,14 @@ const DbMainPage = ({ username }) => {
           </div>
 
           {/* Key Metrics Div */}
-          <div className="w-1/3">
+          {/* <div className="w-1/3">
             <KeyMetrics />
-          </div>
+          </div> */}
         </div>
 
         <div className="flex ">
           <AttendanceSummary />
-          {/* <KeyMetrics/> */}
+          <KeyMetrics/>
         </div>
       </div>
     </div>
