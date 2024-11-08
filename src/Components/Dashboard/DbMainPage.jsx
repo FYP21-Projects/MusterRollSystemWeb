@@ -74,15 +74,20 @@ const DbMainPage = ({ username }) => {
           </div>
         </div>
 
+
+        {/* Attendance Summary and Key Metrics */}
+        <div className="flex mt-8 space-x-4">
+          <div className="w-3/5">
+            <AttendanceSummary />
+          </div>
+          <div className="w-2/5">
+            <KeyMetrics />
+          </div>
+        </div>
+        
         {/* Workplace Record Section */}
         <div className="mt-8">
           <WorkplaceRecord />
-        </div>
-
-        {/* Attendance Summary and Key Metrics */}
-        <div className="flex mt-8">
-          <AttendanceSummary />
-          <KeyMetrics />
         </div>
       </div>
     </div>
