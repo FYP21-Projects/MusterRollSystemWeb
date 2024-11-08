@@ -1,6 +1,7 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
 import Profilepic from "../../assets/profilepic.jpg";
+import WorkplaceRecord from "./WorkplaceRecord";
 
 import {
   FaCalendarAlt,
@@ -70,77 +71,18 @@ const DbMainPage = ({ username }) => {
               <span>27</span>
               <span>28</span>
             </div>
-
-            {/* <div className="flex justify-between items-center mt-4">
-              <button className="bg-orange-400 text-white px-4 py-2 rounded-lg">
-                Create Plan
-              </button>
-              <button className="bg-orange-400 text-white px-4 py-2 rounded-lg">
-                Outing
-              </button>
-            </div> */}
           </div>
         </div>
 
-        {/* Quick Status Section */}
+        {/* Workplace Record Section */}
+        <div className="mt-8">
+          <WorkplaceRecord />
+        </div>
+
+        {/* Attendance Summary and Key Metrics */}
         <div className="flex mt-8">
-          {/* Main Div */}
-          <div className="flex-grow mr-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {/* First Row: View Attendance and Leave */}
-              <div className="flex flex-col">
-                {/* View Attendance */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
-                  <FaRegFileAlt className="text-cofee_dark text-4xl" />
-                  <div className="ml-4">
-                    <h4 className="text-2xl font-semibold">View Attendance</h4>
-                    <p className="text-gray-500">Check attendance records.</p>
-                  </div>
-                </div>
-
-
-                {/* Leave */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
-                  <FaCalendarAlt className="text-cofee_dark text-4xl" />
-                  <div className="ml-4">
-                    <h3 className="text-2xl font-semibold">Leave</h3>
-                    <p className="text-cofee_ligt">Denied</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Second Row: Employee Info and Add Employee */}
-              <div className="flex flex-col">
-                {/* Employee Info */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48  mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
-                  <FaUserEdit className="text-cofee_dark text-4xl" />
-                  <div className="ml-4">
-                    <h3 className="text-2xl font-semibold">Employee Info</h3>
-                    <p className="text-gray-500">Edit employee information.</p>
-                  </div>
-                </div>
-
-                {/* Add Employee */}
-                <div className="bg-white shadow-md rounded-lg p-6 flex items-center w-full h-48 mb-6 transform transition duration-300 hover:scale-105 hover:shadow-cofee_dark">
-                  <FaUserPlus className="text-cofee_dark text-4xl" />
-                  <div className="ml-4">
-                    <h3 className="text-2xl font-semibold">Add Employee</h3>
-                    <p className="text-gray-500">Add new employee records.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Metrics Div */}
-          {/* <div className="w-1/3">
-            <KeyMetrics />
-          </div> */}
-        </div>
-
-        <div className="flex ">
           <AttendanceSummary />
-          <KeyMetrics/>
+          <KeyMetrics />
         </div>
       </div>
     </div>

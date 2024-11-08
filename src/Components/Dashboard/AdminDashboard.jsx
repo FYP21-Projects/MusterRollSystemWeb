@@ -9,6 +9,7 @@ import UpdtEmply from "./UpdtEmply";
 import LeaveManag from "./LeaveManag";
 import KeyMetrics from "./KeyMetrics";
 import { useLocation } from "react-router-dom";
+import WorkplaceRecord from "./WorkplaceRecord";
 
 function AdminDashboard() {
   const location = useLocation();
