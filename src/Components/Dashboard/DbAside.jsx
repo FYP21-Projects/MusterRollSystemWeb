@@ -7,7 +7,7 @@ import LeaveManag from "./LeaveManag";
 import AddEmply from "./AddEmply";
 import { useNavigate } from "react-router-dom";
 
-const DbAside = () => {
+const DbAside = ({ username }) => {
   const [selectedPage, setSelectedPage] = useState("DbMainPage");
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ const DbAside = () => {
   const renderSelectedPage = () => {
     switch (selectedPage) {
       case "DbMainPage":
-        return <DbMainPage />;
+        return <DbMainPage username={username} />;
       case "ViewAttnd":
         return <ViewAttnd />;
       case "UpdtEmply":
