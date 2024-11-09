@@ -45,7 +45,7 @@ const AddEmply = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-cofee">
       <header className="bg-cofee_dark p-2 text-white text-center">
         <h1 className="text-2xl font-bold">Add New Employee</h1>
       </header>
