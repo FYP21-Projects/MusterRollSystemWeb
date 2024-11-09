@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCaretDown } from "@fortawesome/free-solid-svg-icons"; // Importing user and dropdown icons
-import MainLogo from "../../assets/MainLogo.jpg";
+// import MainLogo from "../../assets/MainLogo.jpg";
 import Logo from "../../assets/logo.png";
 
 const DbHeader = () => {

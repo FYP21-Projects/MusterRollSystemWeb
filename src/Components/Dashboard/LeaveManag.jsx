@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 const LeaveManag = () => {
-  // Example data for the table
-  const leaveData = [
+  const initialLeaveData = [
     {
       srNo: 1,
       name: "John Doe",
@@ -12,6 +11,7 @@ const LeaveManag = () => {
       startDate: "2024-09-25",
       endDate: "2024-09-27",
       status: "Pending",
+      comment: "Requires immediate attention due to health issues.",
     },
     {
       srNo: 2,
@@ -22,26 +22,39 @@ const LeaveManag = () => {
       startDate: "2024-10-01",
       endDate: "2024-10-05",
       status: "Approved",
+      comment: "Approved for family vacation.",
     },
     // Add more entries here as needed
   ];
 
+  const [leaveData, setLeaveData] = useState(initialLeaveData);
   const [selectedReason, setSelectedReason] = useState("All");
   const [sortBy, setSortBy] = useState("Date");
-  const [showCommentBox, setShowCommentBox] = useState(null);
-  const [comments, setComments] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [selectedLeave, setSelectedLeave] = useState(null);
+  const [comments, setComments] = useState("");
 
-  // Function to handle the proceed button click
-  const handleProceedClick = (srNo) => {
-    setShowCommentBox(srNo === showCommentBox ? null : srNo); // Toggle comment box visibility
+  // Function to handle the proceed button click and show modal with details
+  const handleProceedClick = (leave) => {
+    setSelectedLeave(leave);
+    setShowModal(true);
   };
 
-  // Function to handle comment submission
-  const handleCommentChange = (srNo, comment) => {
-    setComments((prevComments) => ({
-      ...prevComments,
-      [srNo]: comment,
-    }));
+  // Function to handle comment change
+  const handleCommentChange = (event) => {
+    setComments(event.target.value);
+  };
+
+  // Function to handle approval/rejection and update the leave status
+  const handleDecision = (decision) => {
+    setLeaveData((prevData) =>
+      prevData.map((leave) =>
+        leave.srNo === selectedLeave.srNo
+          ? { ...leave, status: decision === "Approve" ? "Approved" : "Rejected" }
+          : leave
+      )
+    );
+    setShowModal(false); // Close modal after decision
   };
 
   return (
@@ -114,73 +127,80 @@ const LeaveManag = () => {
           </thead>
 
           <tbody className="text-gray-700">
-            {leaveData.map((leave, index) => (
+            {leaveData.map((leave) => (
               <tr
-                key={index}
+                key={leave.srNo}
                 className="border-t border-gray-200 hover:bg-gray-100 transition duration-200"
               >
                 <td className="py-4 px-6 text-left text-sm">{leave.srNo}</td>
                 <td className="py-4 px-6 text-left text-sm">{leave.name}</td>
-                <td className="py-4 px-6 text-left text-sm">
-                  {leave.workplace}
-                </td>
+                <td className="py-4 px-6 text-left text-sm">{leave.workplace}</td>
                 <td className="py-4 px-6 text-left text-sm">{leave.reason}</td>
+                <td className="py-4 px-6 text-center text-sm">{leave.remainingLeaves}</td>
+                <td className="py-4 px-6 text-center text-sm">{leave.startDate}</td>
+                <td className="py-4 px-6 text-center text-sm">{leave.endDate}</td>
                 <td className="py-4 px-6 text-center text-sm">
-                  {leave.remainingLeaves}
-                </td>
-                <td className="py-4 px-6 text-center text-sm">
-                  {leave.startDate}
-                </td>
-                <td className="py-4 px-6 text-center text-sm">
-                  {leave.endDate}
-                </td>
-                <td className="py-4 px-6 text-center text-sm">
-                  <span
-                    className={`inline-block py-1 px-3 rounded-full text-xs font-bold ${
-                      leave.status === "Pending"
-                        ? "bg-yellow-300 text-yellow-800"
-                        : "bg-green-300 text-green-800"
-                    }`}
-                  >
+                  <span className={`inline-block py-1 px-3 rounded-full text-xs font-bold ${
+                    leave.status === "Pending" ? "bg-yellow-300 text-yellow-800" :
+                    leave.status === "Approved" ? "bg-green-300 text-green-800" :
+                    "bg-red-300 text-red-800"
+                  }`}>
                     {leave.status}
                   </span>
                 </td>
                 <td className="py-4 px-6 text-center">
                   <button
-                    onClick={() => handleProceedClick(leave.srNo)}
+                    onClick={() => handleProceedClick(leave)}
                     className="bg-cofee_ligt text-white py-2 px-6 rounded-lg hover:bg-cofee_dim transition duration-300"
                   >
                     Proceed
                   </button>
-
-                  {/* Comment Box */}
-                  {showCommentBox === leave.srNo && (
-                    <div className="mt-2">
-                      <textarea
-                        placeholder="Enter your comment"
-                        value={comments[leave.srNo] || ""}
-                        onChange={(e) =>
-                          handleCommentChange(leave.srNo, e.target.value)
-                        }
-                        className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
-                      />
-                      <button
-                        onClick={() => setShowCommentBox(null)} // Close box after submitting
-                        className="bg-green-500 text-white py-1 px-4 mt-2 rounded-lg hover:bg-green-600 transition duration-300"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  )}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      {/* Modal for Leave Request Details */}
+      {showModal && selectedLeave && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-8 w-full max-w-lg">
+            <h2 className="text-xl font-semibold mb-4">Leave Request Details</h2>
+            <p><strong>Name:</strong> {selectedLeave.name}</p>
+            <p><strong>Workplace:</strong> {selectedLeave.workplace}</p>
+            <p><strong>Reason:</strong> {selectedLeave.reason}</p>
+            <p><strong>Remaining Leaves:</strong> {selectedLeave.remainingLeaves}</p>
+            <p><strong>Start Date:</strong> {selectedLeave.startDate}</p>
+            <p><strong>End Date:</strong> {selectedLeave.endDate}</p>
+            <p><strong>Comment:</strong> {selectedLeave.comment}</p>
+
+
+            <div className="flex justify-end mt-4 space-x-4">
+              <button
+                onClick={() => handleDecision("Approve")}
+                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600"
+              >
+                Approve
+              </button>
+              <button
+                onClick={() => handleDecision("Reject")}
+                className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
+              >
+                Reject
+              </button>
+              <button
+                onClick={() => setShowModal(false)}
+                className="bg-gray-300 py-2 px-4 rounded-lg hover:bg-gray-400"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default LeaveManag;
-
