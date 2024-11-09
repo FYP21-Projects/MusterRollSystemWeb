@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const DbAside = ({ username }) => {
   const [selectedPage, setSelectedPage] = useState("DbMainPage");
+  const [preferencesOpen, setPreferencesOpen] = useState(false); // Track preferences section open/close state
   const navigate = useNavigate();
 
   const handleLogIn = () => {
@@ -29,6 +30,17 @@ const DbAside = ({ username }) => {
         return <LeaveManag />;
       case "AddEmply":
         return <AddEmply />;
+      // Add cases for new preference sub-options
+      case "ProfileSettings":
+        return <div>Profile Settings Page</div>;
+      case "Notification":
+        return <div>Notification Settings Page</div>;
+      case "Appearance":
+        return <div>Appearance Settings Page</div>;
+      case "BackupRestore":
+        return <div>Backup and Restore Page</div>;
+      case "AttendanceReminder":
+        return <div>Attendance Reminder Page</div>;
       default:
         return <DbMainPage />;
     }
@@ -110,6 +122,68 @@ const DbAside = ({ username }) => {
               </button>
             </li>
           </ul>
+        </div>
+
+        {/* Preferences Section */}
+        <div className="mb-6 border border-cofee_dark p-3 rounded-lg">
+          <h3
+            className="text-cofee_dark text-xl mb-4 cursor-pointer flex justify-between items-center"
+            onClick={() => setPreferencesOpen(!preferencesOpen)} // Toggle preferences submenu
+          >
+            Preferences
+            <span className="material-icons">
+              {preferencesOpen ? "expand_less" : "expand_more"}
+            </span>
+          </h3>
+          {preferencesOpen && (
+            <ul>
+              <li className="mb-2">
+                <button
+                  className="flex items-center text-gray-700 hover:text-gray-900"
+                  onClick={() => setSelectedPage("ProfileSettings")}
+                >
+                  <span className="material-icons">person</span>
+                  <span className="ml-3">Profile Settings</span>
+                </button>
+              </li>
+              <li className="mb-2">
+                <button
+                  className="flex items-center text-gray-700 hover:text-gray-900"
+                  onClick={() => setSelectedPage("Notification")}
+                >
+                  <span className="material-icons">notifications</span>
+                  <span className="ml-3">Notification</span>
+                </button>
+              </li>
+              <li className="mb-2">
+                <button
+                  className="flex items-center text-gray-700 hover:text-gray-900"
+                  onClick={() => setSelectedPage("Appearance")}
+                >
+                  <span className="material-icons">palette</span>
+                  <span className="ml-3">Appearance</span>
+                </button>
+              </li>
+              <li className="mb-2">
+                <button
+                  className="flex items-center text-gray-700 hover:text-gray-900"
+                  onClick={() => setSelectedPage("BackupRestore")}
+                >
+                  <span className="material-icons">backup</span>
+                  <span className="ml-3">Backup and Restore</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  className="flex items-center text-gray-700 hover:text-gray-900"
+                  onClick={() => setSelectedPage("AttendanceReminder")}
+                >
+                  <span className="material-icons">alarm</span>
+                  <span className="ml-3">Attendance Reminder</span>
+                </button>
+              </li>
+            </ul>
+          )}
         </div>
 
         {/* Settings Section */}
