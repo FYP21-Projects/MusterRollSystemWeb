@@ -1,86 +1,75 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faEnvelope,
-  faPhone,
-  faCommentDots,
-} from "@fortawesome/free-solid-svg-icons";
 
-const ContactUs = () => {
+function ContactUs() {
   return (
-    <div className="flex flex-col justify-center items-center p-6 bg-cofee w-full shadow-md rounded-lg">
-      <h2 className="text-6xl text-cofee_dark font-semibold text-center mb-4">
-        Get in Touch
-      </h2>
-      <p className="text-center text-3xl mb-6">
-        Phone num:{" "}
-        <a href="tel:+8298393638" className="text-cofee_dark text-2xl">
-          +8298393638
-        </a>
-        <br />
-        Email address:{" "}
-        <a href="mailto:shweeta@gamil.com" className="text-cofee_dark">
-          shweeta@gamil.com
-        </a>
-      </p>
-      <div className="flex flex-col md:flex-row w-3/5  justify-center gap-4 mb-6">
-        <div className="w-full md:w-1/2">
-          <div className="relative mb-4">
-            <FontAwesomeIcon
-              icon={faUser}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-            />
-            <input
-              type="text"
-              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
-              placeholder="Your Name"
-            />
-          </div>
-          <div className="relative mb-4">
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-            />
-            <input
-              type="email"
-              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
-              placeholder="Your Email"
-            />
-          </div>
-          <div className="relative">
-            <FontAwesomeIcon
-              icon={faPhone}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-            />
-            <input
-              type="text"
-              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
-              placeholder="Your Contact"
-            />
-          </div>
+    <div className="flex items-center justify-center min-h-screen bg-cofee p-6">
+      <div className="max-w-md w-full bg-cofee_dim shadow-lg rounded-lg p-8">
+        <h2 className="text-3xl font-bold text-cofee_dark text-center mb-4">
+          Get in Touch
+        </h2>
+        <div className="text-center text-cofee_ligt mb-6">
+          <p>
+            <i className="fas fa-phone"></i> Phone: +8298393638
+          </p>
+          <p>
+            <i className="fas fa-envelope"></i> Email: shweeta@gmail.com
+          </p>
         </div>
-        <div className="w-full md:w-1/2">
-          <div className="relative">
-            <FontAwesomeIcon
-              icon={faCommentDots}
-              className="absolute left-3 top-3 text-gray-400"
+        <form className="space-y-4">
+          <div>
+            <label className="sr-only" htmlFor="name">
+              Full Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Full Name"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cofee_dark"
             />
+          </div>
+          <div>
+            <label className="sr-only" htmlFor="email">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email address"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cofee_dark"
+            />
+          </div>
+          <div>
+            <label className="sr-only" htmlFor="contact">
+              Phone Number
+            </label>
+            <input
+              id="contact"
+              type="text"
+              placeholder="Phone Number (optional)"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cofee_dark"
+            />
+          </div>
+          <div>
+            <label className="sr-only" htmlFor="message">
+              Message
+            </label>
             <textarea
-              className="w-full text-xl pl-10 p-2 border border-gray-300 rounded-md"
-              placeholder="Description"
-              rows="6"
+              id="message"
+              placeholder="Your Message"
+              rows="4"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cofee_dark"
             ></textarea>
           </div>
-        </div>
-      </div>
-      <div className="text-center ">
-        <button className="px-6  py-2 bg-cofee_dark text-cofee_dim text-xl font-semibold rounded-md hover:bg-cofee_dim hover:text-cofee_dark transition">
-          Send Message
-        </button>
+          <button
+            type="submit"
+            className="w-full bg-cofee_dark text-cofee font-bold p-3 rounded-lg hover:bg-cofee_ligt hover:text-cofee_dark transition-colors"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   );
-};
+}
 
 export default ContactUs;
