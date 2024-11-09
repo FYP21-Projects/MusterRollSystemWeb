@@ -30,17 +30,154 @@ const DbAside = ({ username }) => {
         return <LeaveManag />;
       case "AddEmply":
         return <AddEmply />;
-      // Add cases for new preference sub-options
       case "ProfileSettings":
-        return <div>Profile Settings Page</div>;
+        return (
+          <div>
+            <h2 className="text-xl">Profile Settings</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700">Username</label>
+                <input
+                  type="text"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                  placeholder="Enter new username"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Email</label>
+                <input
+                  type="email"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                  placeholder="Enter new email"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Password</label>
+                <input
+                  type="password"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                  placeholder="Enter new password"
+                />
+              </div>
+              <button
+                type="submit"
+                className="p-2 bg-cofee_dark text-white rounded-md"
+              >
+                Save Changes
+              </button>
+            </form>
+          </div>
+        );
       case "Notification":
-        return <div>Notification Settings Page</div>;
+        return (
+          <div>
+            <h2 className="text-xl">Notification Settings</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700">
+                  Email Notifications
+                </label>
+                <input type="checkbox" className="mr-2" />
+                <span>Email Notifications</span>
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">SMS Notifications</label>
+                <input type="checkbox" className="mr-2" />
+                <span>SMS Notifications</span>
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">
+                  Push Notifications
+                </label>
+                <input type="checkbox" className="mr-2" />
+                <span>Push Notifications</span>
+              </div>
+              <button
+                type="submit"
+                className="p-2 bg-cofee_dark text-white rounded-md"
+              >
+                Save Changes
+              </button>
+            </form>
+          </div>
+        );
       case "Appearance":
-        return <div>Appearance Settings Page</div>;
+        return (
+          <div>
+            <h2 className="text-xl">Appearance Settings</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700">Theme</label>
+                <select className="w-full p-2 border border-gray-300 rounded-md">
+                  <option value="light">Light Theme</option>
+                  <option value="dark">Dark Theme</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Font Size</label>
+                <select className="w-full p-2 border border-gray-300 rounded-md">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                className="p-2 bg-cofee_dark text-white rounded-md"
+              >
+                Save Changes
+              </button>
+            </form>
+          </div>
+        );
       case "BackupRestore":
-        return <div>Backup and Restore Page</div>;
+        return (
+          <div>
+            <h2 className="text-xl">Backup and Restore</h2>
+            <p className="mb-4">
+              Create backups of your data or restore from a previous backup.
+            </p>
+            <div className="mb-4">
+              <button className="p-2 bg-cofee_dark text-white rounded-md">
+                Create Backup
+              </button>
+            </div>
+            <div className="mb-4">
+              <button className="p-2 bg-cofee_dark text-white rounded-md">
+                Restore Backup
+              </button>
+            </div>
+          </div>
+        );
       case "AttendanceReminder":
-        return <div>Attendance Reminder Page</div>;
+        return (
+          <div>
+            <h2 className="text-xl">Attendance Reminder</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700">Reminder Time</label>
+                <input
+                  type="time"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Frequency</label>
+                <select className="w-full p-2 border border-gray-300 rounded-md">
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                className="p-2 bg-cofee_dark text-white rounded-md"
+              >
+                Save Reminder
+              </button>
+            </form>
+          </div>
+        );
       default:
         return <DbMainPage />;
     }
@@ -152,7 +289,7 @@ const DbAside = ({ username }) => {
                   onClick={() => setSelectedPage("Notification")}
                 >
                   <span className="material-icons">notifications</span>
-                  <span className="ml-3">Notification</span>
+                  <span className="ml-3">Notification Settings</span>
                 </button>
               </li>
               <li className="mb-2">
@@ -161,7 +298,7 @@ const DbAside = ({ username }) => {
                   onClick={() => setSelectedPage("Appearance")}
                 >
                   <span className="material-icons">palette</span>
-                  <span className="ml-3">Appearance</span>
+                  <span className="ml-3">Appearance Settings</span>
                 </button>
               </li>
               <li className="mb-2">
@@ -212,10 +349,8 @@ const DbAside = ({ username }) => {
         </div>
       </aside>
 
-      {/* Main content area */}
-      <main className="ml-[20%] w-[80%] p-4 overflow-y-auto">
-        {renderSelectedPage()}
-      </main>
+      {/* Main Content */}
+      <div className="flex-1 ml-[20%] p-4">{renderSelectedPage()}</div>
     </div>
   );
 };
