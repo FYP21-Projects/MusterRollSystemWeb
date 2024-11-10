@@ -10,6 +10,8 @@ import LeaveManag from "./LeaveManag";
 import KeyMetrics from "./KeyMetrics";
 import { useLocation } from "react-router-dom";
 import WorkplaceRecord from "./WorkplaceRecord";
+import MyProfile from "./MyProfile";
+
 
 function AdminDashboard() {
   const location = useLocation();
@@ -20,6 +22,7 @@ function AdminDashboard() {
       <div className="flex pt-16 w-full">
         <DbAside username={username} />
       </div>
+      
     </>
   );
 }
