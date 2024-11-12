@@ -54,24 +54,47 @@ const AttendanceSummary = () => {
   };
 
   return (
-    <div className="p-6 bg-[#F8EDE3] rounded-lg shadow-md max-w-5xl mx-auto">
-      <h2 className="text-xl font-semibold text-center mb-4 text-[#8D493A]">Attendance Summary</h2>
-      <div className="flex justify-center items-center mb-4">
-        <label className="mr-2 font-medium text-[#8D493A]">Report Type:</label>
-        <select
-          value={reportType}
-          onChange={handleReportChange}
-          className="border border-[#8D493A] bg-[#DFD3C3] rounded p-2 text-[#8D493A]"
-        >
-          <option value="Monthly">Monthly</option>
-          <option value="Weekly">Weekly</option>
-          <option value="Yearly">Yearly</option>
-        </select>
-      </div>
-      <div className="h-[500px] w-full">
-        <Bar data={data[reportType]} options={chartOptions} />
-      </div>
-    </div>
+    // <div className="p-6 bg-[#F8EDE3] rounded-lg shadow-md max-w-5xl mx-auto">
+    //   <h2 className="text-xl font-semibold text-center mb-4 text-[#8D493A]">Attendance Summary</h2>
+    //   <div className="flex justify-center items-center mb-4">
+    //     <label className="mr-2 font-medium text-[#8D493A]">Report Type:</label>
+    //     <select
+    //       value={reportType}
+    //       onChange={handleReportChange}
+    //       className="border border-[#8D493A] bg-[#DFD3C3] rounded p-2 text-[#8D493A]"
+    //     >
+    //       <option value="Monthly">Monthly</option>
+    //       <option value="Weekly">Weekly</option>
+    //       <option value="Yearly">Yearly</option>
+    //     </select>
+    //   </div>
+    //   <div className="h-[500px] w-full">
+    //     <Bar data={data[reportType]} options={chartOptions} />
+    //   </div>
+    // </div>
+    <div className="p-4 sm:p-6 bg-[#F8EDE3] rounded-lg shadow-md max-w-full md:max-w-3xl lg:max-w-5xl mx-auto">
+  <h2 className="text-lg sm:text-xl font-semibold text-center mb-3 sm:mb-4 text-[#8D493A]">Attendance Summary</h2>
+  
+  {/* Report Type Selector */}
+  <div className="flex flex-col sm:flex-row justify-center items-center mb-3 sm:mb-4">
+    <label className="font-medium text-[#8D493A] mb-2 sm:mb-0 sm:mr-2">Report Type:</label>
+    <select
+      value={reportType}
+      onChange={handleReportChange}
+      className="border border-[#8D493A] bg-[#DFD3C3] rounded p-2 text-[#8D493A] w-full sm:w-auto"
+    >
+      <option value="Monthly">Monthly</option>
+      <option value="Weekly">Weekly</option>
+      <option value="Yearly">Yearly</option>
+    </select>
+  </div>
+
+  {/* Chart Container */}
+  <div className="h-[300px] sm:h-[400px] md:h-[500px] w-full">
+    <Bar data={data[reportType]} options={chartOptions} />
+  </div>
+</div>
+
   );
 };
 

@@ -30,6 +30,7 @@ const DbAside = ({ username }) => {
         return <LeaveManag />;
       case "AddEmply":
         return <AddEmply />;
+
       case "ProfileSettings":
         return (
           <div>
@@ -352,6 +353,7 @@ const DbAside = ({ username }) => {
       {/* Main Content */}
       <div className="flex-1 ml-[20%] p-4">{renderSelectedPage()}</div>
     </div>
+    
   );
 };
 
