@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
-
+import GPS_Tracking from '../assets/Landing_pictures/GPS_Tracing.png'
 const GpsTracking = () => {
 
   // Initialize AOS
@@ -33,11 +33,11 @@ const GpsTracking = () => {
           </p>
         </div>
         {/* Left Div */}
-        <div className="flex justify-around items-center md:w-1/2 p-8" data-aos="fade-up">
+        <div className="flex justify-around items-center md:w-1/3 p-8" data-aos="fade-up">
           <img
-            src="https://via.placeholder.com/400"
+            src={GPS_Tracking}
             alt="Placeholder"
-            className="rounded-lg shadow-lg"
+            className="h-full"
           />
         </div>
       </div>
