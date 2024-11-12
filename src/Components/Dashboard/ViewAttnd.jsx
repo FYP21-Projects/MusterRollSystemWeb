@@ -12,9 +12,9 @@ const ViewAttnd = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-cofee">
       {/* Header */}
-      <header className="bg-brown-500 p-4 text-white flex justify-between items-center">
+      <header className="bg-brown-500 p-4 text-cofee_dark flex justify-between items-center">
         <h1 className="text-2xl font-bold">View Attendance</h1>
       </header>
 
@@ -29,7 +29,7 @@ const ViewAttnd = () => {
               value={employeeName}
               onChange={(e) => setEmployeeName(e.target.value)}
               placeholder="Search by Employee Name"
-              className="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cofee_dark"
             />
             {/* Employee ID Input */}
             <input
@@ -37,12 +37,12 @@ const ViewAttnd = () => {
               value={employeeId}
               onChange={(e) => setEmployeeId(e.target.value)}
               placeholder="Search by Employee ID"
-              className="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cofee_dark"
             />
             {/* Search Button */}
             <button
               onClick={handleSearch}
-              className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="bg-cofee_dark text-white px-4 py-2 rounded-lg hover:bg-cofee_dark focus:outline-none focus:ring-2 focus:ring-cofee_dark"
             >
               Enter
             </button>

@@ -50,7 +50,10 @@ const LeaveManag = () => {
     setLeaveData((prevData) =>
       prevData.map((leave) =>
         leave.srNo === selectedLeave.srNo
-          ? { ...leave, status: decision === "Approve" ? "Approved" : "Rejected" }
+          ? {
+              ...leave,
+              status: decision === "Approve" ? "Approved" : "Rejected",
+            }
           : leave
       )
     );
@@ -58,7 +61,7 @@ const LeaveManag = () => {
   };
 
   return (
-    <div className="container mx-auto p-8 bg-gray-50 min-h-screen">
+    <div className="container mx-auto p-8 bg-cofee min-h-screen">
       <h1 className="text-4xl font-extrabold text-cofee_dark mb-10 text-center border-b-4 border-cofee_dark pb-4">
         Leave Management Dashboard
       </h1>
@@ -66,7 +69,12 @@ const LeaveManag = () => {
       {/* Dropdown for Reason and Sort By */}
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center space-x-4">
-          <label htmlFor="reason" className="text-sm font-semibold text-gray-700">Reason:</label>
+          <label
+            htmlFor="reason"
+            className="text-sm font-semibold text-gray-700"
+          >
+            Reason:
+          </label>
           <select
             id="reason"
             value={selectedReason}
@@ -81,7 +89,9 @@ const LeaveManag = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <label htmlFor="sort" className="text-sm font-semibold text-gray-700">Sort By:</label>
+          <label htmlFor="sort" className="text-sm font-semibold text-gray-700">
+            Sort By:
+          </label>
           <select
             id="sort"
             value={sortBy}
@@ -134,17 +144,29 @@ const LeaveManag = () => {
               >
                 <td className="py-4 px-6 text-left text-sm">{leave.srNo}</td>
                 <td className="py-4 px-6 text-left text-sm">{leave.name}</td>
-                <td className="py-4 px-6 text-left text-sm">{leave.workplace}</td>
+                <td className="py-4 px-6 text-left text-sm">
+                  {leave.workplace}
+                </td>
                 <td className="py-4 px-6 text-left text-sm">{leave.reason}</td>
-                <td className="py-4 px-6 text-center text-sm">{leave.remainingLeaves}</td>
-                <td className="py-4 px-6 text-center text-sm">{leave.startDate}</td>
-                <td className="py-4 px-6 text-center text-sm">{leave.endDate}</td>
                 <td className="py-4 px-6 text-center text-sm">
-                  <span className={`inline-block py-1 px-3 rounded-full text-xs font-bold ${
-                    leave.status === "Pending" ? "bg-yellow-300 text-yellow-800" :
-                    leave.status === "Approved" ? "bg-green-300 text-green-800" :
-                    "bg-red-300 text-red-800"
-                  }`}>
+                  {leave.remainingLeaves}
+                </td>
+                <td className="py-4 px-6 text-center text-sm">
+                  {leave.startDate}
+                </td>
+                <td className="py-4 px-6 text-center text-sm">
+                  {leave.endDate}
+                </td>
+                <td className="py-4 px-6 text-center text-sm">
+                  <span
+                    className={`inline-block py-1 px-3 rounded-full text-xs font-bold ${
+                      leave.status === "Pending"
+                        ? "bg-yellow-300 text-yellow-800"
+                        : leave.status === "Approved"
+                        ? "bg-green-300 text-green-800"
+                        : "bg-red-300 text-red-800"
+                    }`}
+                  >
                     {leave.status}
                   </span>
                 </td>
@@ -166,15 +188,30 @@ const LeaveManag = () => {
       {showModal && selectedLeave && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-8 w-full max-w-lg">
-            <h2 className="text-xl font-semibold mb-4">Leave Request Details</h2>
-            <p><strong>Name:</strong> {selectedLeave.name}</p>
-            <p><strong>Workplace:</strong> {selectedLeave.workplace}</p>
-            <p><strong>Reason:</strong> {selectedLeave.reason}</p>
-            <p><strong>Remaining Leaves:</strong> {selectedLeave.remainingLeaves}</p>
-            <p><strong>Start Date:</strong> {selectedLeave.startDate}</p>
-            <p><strong>End Date:</strong> {selectedLeave.endDate}</p>
-            <p><strong>Comment:</strong> {selectedLeave.comment}</p>
-
+            <h2 className="text-xl font-semibold mb-4">
+              Leave Request Details
+            </h2>
+            <p>
+              <strong>Name:</strong> {selectedLeave.name}
+            </p>
+            <p>
+              <strong>Workplace:</strong> {selectedLeave.workplace}
+            </p>
+            <p>
+              <strong>Reason:</strong> {selectedLeave.reason}
+            </p>
+            <p>
+              <strong>Remaining Leaves:</strong> {selectedLeave.remainingLeaves}
+            </p>
+            <p>
+              <strong>Start Date:</strong> {selectedLeave.startDate}
+            </p>
+            <p>
+              <strong>End Date:</strong> {selectedLeave.endDate}
+            </p>
+            <p>
+              <strong>Comment:</strong> {selectedLeave.comment}
+            </p>
 
             <div className="flex justify-end mt-4 space-x-4">
               <button
@@ -185,7 +222,7 @@ const LeaveManag = () => {
               </button>
               <button
                 onClick={() => handleDecision("Reject")}
-                className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
+                className="bg-cofee_dark text-white py-2 px-4 rounded-lg hover:bg-cofee_dark"
               >
                 Reject
               </button>
