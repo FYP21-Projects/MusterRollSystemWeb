@@ -7,13 +7,39 @@ import LeaveManag from "./LeaveManag";
 import AddEmply from "./AddEmply";
 import { useNavigate } from "react-router-dom";
 
+const Modal = ({ isOpen, onClose, title, children }) => {
+  if (!isOpen) return null;
+  return (
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+      <div className="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+        <div>{children}</div>
+        <button
+          className="mt-4 p-2 bg-cofee_dark text-white rounded-md"
+          onClick={onClose}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const DbAside = ({ username }) => {
   const [selectedPage, setSelectedPage] = useState("DbMainPage");
-  const [preferencesOpen, setPreferencesOpen] = useState(false); // Track preferences section open/close state
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+  const [modalTitle, setModalTitle] = useState("");
   const navigate = useNavigate();
 
   const handleLogIn = () => {
     navigate("/");
+  };
+
+  const openModal = (title, content) => {
+    setModalTitle(title);
+    setModalContent(content);
+    setModalOpen(true);
   };
 
   const renderSelectedPage = () => {
@@ -30,155 +56,6 @@ const DbAside = ({ username }) => {
         return <LeaveManag />;
       case "AddEmply":
         return <AddEmply />;
-
-      case "ProfileSettings":
-        return (
-          <div>
-            <h2 className="text-xl">Profile Settings</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-gray-700">Username</label>
-                <input
-                  type="text"
-                  className="w-full p-2 border border-gray-300 rounded-md"
-                  placeholder="Enter new username"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Email</label>
-                <input
-                  type="email"
-                  className="w-full p-2 border border-gray-300 rounded-md"
-                  placeholder="Enter new email"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Password</label>
-                <input
-                  type="password"
-                  className="w-full p-2 border border-gray-300 rounded-md"
-                  placeholder="Enter new password"
-                />
-              </div>
-              <button
-                type="submit"
-                className="p-2 bg-cofee_dark text-white rounded-md"
-              >
-                Save Changes
-              </button>
-            </form>
-          </div>
-        );
-      case "Notification":
-        return (
-          <div>
-            <h2 className="text-xl">Notification Settings</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-gray-700">
-                  Email Notifications
-                </label>
-                <input type="checkbox" className="mr-2" />
-                <span>Email Notifications</span>
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">SMS Notifications</label>
-                <input type="checkbox" className="mr-2" />
-                <span>SMS Notifications</span>
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">
-                  Push Notifications
-                </label>
-                <input type="checkbox" className="mr-2" />
-                <span>Push Notifications</span>
-              </div>
-              <button
-                type="submit"
-                className="p-2 bg-cofee_dark text-white rounded-md"
-              >
-                Save Changes
-              </button>
-            </form>
-          </div>
-        );
-      case "Appearance":
-        return (
-          <div>
-            <h2 className="text-xl">Appearance Settings</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-gray-700">Theme</label>
-                <select className="w-full p-2 border border-gray-300 rounded-md">
-                  <option value="light">Light Theme</option>
-                  <option value="dark">Dark Theme</option>
-                </select>
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Font Size</label>
-                <select className="w-full p-2 border border-gray-300 rounded-md">
-                  <option value="small">Small</option>
-                  <option value="medium">Medium</option>
-                  <option value="large">Large</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="p-2 bg-cofee_dark text-white rounded-md"
-              >
-                Save Changes
-              </button>
-            </form>
-          </div>
-        );
-      case "BackupRestore":
-        return (
-          <div>
-            <h2 className="text-xl">Backup and Restore</h2>
-            <p className="mb-4">
-              Create backups of your data or restore from a previous backup.
-            </p>
-            <div className="mb-4">
-              <button className="p-2 bg-cofee_dark text-white rounded-md">
-                Create Backup
-              </button>
-            </div>
-            <div className="mb-4">
-              <button className="p-2 bg-cofee_dark text-white rounded-md">
-                Restore Backup
-              </button>
-            </div>
-          </div>
-        );
-      case "AttendanceReminder":
-        return (
-          <div>
-            <h2 className="text-xl">Attendance Reminder</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-gray-700">Reminder Time</label>
-                <input
-                  type="time"
-                  className="w-full p-2 border border-gray-300 rounded-md"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Frequency</label>
-                <select className="w-full p-2 border border-gray-300 rounded-md">
-                  <option value="daily">Daily</option>
-                  <option value="weekly">Weekly</option>
-                  <option value="monthly">Monthly</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="p-2 bg-cofee_dark text-white rounded-md"
-              >
-                Save Reminder
-              </button>
-            </form>
-          </div>
-        );
       default:
         return <DbMainPage />;
     }
@@ -264,74 +141,90 @@ const DbAside = ({ username }) => {
 
         {/* Preferences Section */}
         <div className="mb-6 border border-cofee_dark p-3 rounded-lg">
-          <h3
-            className="text-cofee_dark text-xl mb-4 cursor-pointer flex justify-between items-center"
-            onClick={() => setPreferencesOpen(!preferencesOpen)} // Toggle preferences submenu
-          >
-            Preferences
-            <span className="material-icons">
-              {preferencesOpen ? "expand_less" : "expand_more"}
-            </span>
-          </h3>
-          {preferencesOpen && (
-            <ul>
-              <li className="mb-2">
-                <button
-                  className="flex items-center text-gray-700 hover:text-gray-900"
-                  onClick={() => setSelectedPage("ProfileSettings")}
-                >
-                  <span className="material-icons">person</span>
-                  <span className="ml-3">Profile Settings</span>
-                </button>
-              </li>
-              <li className="mb-2">
-                <button
-                  className="flex items-center text-gray-700 hover:text-gray-900"
-                  onClick={() => setSelectedPage("Notification")}
-                >
-                  <span className="material-icons">notifications</span>
-                  <span className="ml-3">Notification Settings</span>
-                </button>
-              </li>
-              <li className="mb-2">
-                <button
-                  className="flex items-center text-gray-700 hover:text-gray-900"
-                  onClick={() => setSelectedPage("Appearance")}
-                >
-                  <span className="material-icons">palette</span>
-                  <span className="ml-3">Appearance Settings</span>
-                </button>
-              </li>
-              <li className="mb-2">
-                <button
-                  className="flex items-center text-gray-700 hover:text-gray-900"
-                  onClick={() => setSelectedPage("BackupRestore")}
-                >
-                  <span className="material-icons">backup</span>
-                  <span className="ml-3">Backup and Restore</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  className="flex items-center text-gray-700 hover:text-gray-900"
-                  onClick={() => setSelectedPage("AttendanceReminder")}
-                >
-                  <span className="material-icons">alarm</span>
-                  <span className="ml-3">Attendance Reminder</span>
-                </button>
-              </li>
-            </ul>
-          )}
+          <h3 className="text-cofee_dark text-xl mb-4">Preferences</h3>
+          <ul>
+            <li className="mb-2">
+              <button
+                className="flex items-center text-gray-700 hover:text-gray-900"
+                onClick={() =>
+                  openModal("Profile Settings", (
+                    <form>
+                      <div className="mb-4">
+                        <label className="block text-gray-700">Username</label>
+                        <input
+                          type="text"
+                          className="w-full p-2 border border-gray-300 rounded-md"
+                          placeholder="Enter new username"
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700">Email</label>
+                        <input
+                          type="email"
+                          className="w-full p-2 border border-gray-300 rounded-md"
+                          placeholder="Enter new email"
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700">Password</label>
+                        <input
+                          type="password"
+                          className="w-full p-2 border border-gray-300 rounded-md"
+                          placeholder="Enter new password"
+                        />
+                      </div>
+                    </form>
+                  ))
+                }
+              >
+                <span className="material-icons">person</span>
+                <span className="ml-3">Profile Settings</span>
+              </button>
+            </li>
+            <li className="mb-2">
+              <button
+                className="flex items-center text-gray-700 hover:text-gray-900"
+                onClick={() =>
+                  openModal("Notification Settings", (
+                    <form>
+                      <div className="mb-4">
+                        <label className="block text-gray-700">
+                          Email Notifications
+                        </label>
+                        <input type="checkbox" className="mr-2" />
+                        <span>Email Notifications</span>
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700">SMS Notifications</label>
+                        <input type="checkbox" className="mr-2" />
+                        <span>SMS Notifications</span>
+                      </div>
+                    </form>
+                  ))
+                }
+              >
+                <span className="material-icons">notifications</span>
+                <span className="ml-3">Notification Settings</span>
+              </button>
+            </li>
+          </ul>
         </div>
 
         {/* Settings Section */}
-        <div className="border border-cofee_dark p-3 rounded-lg">
+        <div className="mb-6 border border-cofee_dark p-3 rounded-lg">
           <h3 className="text-cofee_dark text-xl mb-4">Settings</h3>
           <ul>
             <li className="mb-2">
               <button
                 className="flex items-center text-gray-700 hover:text-gray-900"
-                onClick={() => setSelectedPage("MyProfile")}
+                onClick={() =>
+                  openModal("My Profile", (
+                    <div>
+                      <p>Your Profile Settings</p>
+                      {/* Include profile settings content here */}
+                    </div>
+                  ))
+                }
               >
                 <span className="material-icons">person</span>
                 <span className="ml-3">My Profile</span>
@@ -352,8 +245,12 @@ const DbAside = ({ username }) => {
 
       {/* Main Content */}
       <div className="flex-1 ml-[20%] p-4">{renderSelectedPage()}</div>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} title={modalTitle}>
+        {modalContent}
+      </Modal>
     </div>
-    
   );
 };
 
