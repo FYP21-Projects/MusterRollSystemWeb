@@ -7,9 +7,11 @@ const AddEmply = () => {
     name: "",
     phone: "",
     email: "",
-    position: "",
     hireDate: "",
     gender: "",
+    role: "",
+    subArea: "",
+    siteArea: "",
   });
 
   const [photo, setPhoto] = useState(null);
@@ -28,6 +30,16 @@ const AddEmply = () => {
     }
   };
 
+  const handleRoleChange = (e) => {
+    const role = e.target.value;
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      role,
+      subArea: "",
+      siteArea: "",
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Employee Added:", employee, "Photo:", photo);
@@ -37,9 +49,11 @@ const AddEmply = () => {
       name: "",
       phone: "",
       email: "",
-      position: "",
       hireDate: "",
       gender: "",
+      role: "",
+      subArea: "",
+      siteArea: "",
     });
     setPhoto(null);
   };
@@ -120,26 +134,70 @@ const AddEmply = () => {
                   />
                 </div>
 
-                {/* Place of Work Dropdown */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Place of Work
+                {/* Role - Radio Buttons */}
+                <div className="col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Role
                   </label>
-                  <select
-                    name="position"
-                    value={employee.position}
-                    onChange={handleChange}
-                    className="mt-1 p-2 bg-gray-100 rounded-md w-full"
-                    required
-                  >
-                    <option value="" disabled>
-                      Select Place of Work
-                    </option>
-                    <option value="Sukkur">Sukkur</option>
-                    <option value="Daharki">Daharki</option>
-                    <option value="Ghotki">Ghotki</option>
-                  </select>
+                  <div className="flex items-center gap-4">
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="role"
+                        value="Admin"
+                        checked={employee.role === "Admin"}
+                        onChange={handleRoleChange}
+                        className="mr-2"
+                      />
+                      Admin
+                    </label>
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="role"
+                        value="Employee"
+                        checked={employee.role === "Employee"}
+                        onChange={handleRoleChange}
+                        className="mr-2"
+                      />
+                      Employee
+                    </label>
+                  </div>
                 </div>
+
+                {/* Conditional Fields - SubArea or SiteArea */}
+                {employee.role === "Admin" && (
+                  <div className="col-span-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      SubArea
+                    </label>
+                    <input
+                      type="text"
+                      name="subArea"
+                      value={employee.subArea}
+                      onChange={handleChange}
+                      className="mt-1 p-2 bg-gray-100 rounded-md w-full"
+                      placeholder="Enter SubArea"
+                      required={employee.role === "Admin"}
+                    />
+                  </div>
+                )}
+                {employee.role === "Employee" && (
+                  <div className="col-span-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      SiteArea
+                    </label>
+                    <input
+                      type="text"
+                      name="siteArea"
+                      value={employee.siteArea}
+                      onChange={handleChange}
+                      className="mt-1 p-2 bg-gray-100 rounded-md w-full"
+                      placeholder="Enter SiteArea"
+                      required={employee.role === "Employee"}
+                    />
+                  </div>
+                )}
 
                 {/* Hire Date */}
                 <div>
