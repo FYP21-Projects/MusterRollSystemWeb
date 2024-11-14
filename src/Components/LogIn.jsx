@@ -10,8 +10,33 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogIn = (e) => {
-    e.preventDefault();
+  const handleLogIn = async (e) => {
+    // e.preventDefault();
+
+    // try {
+    //   const response = await axios.post(
+    //     "http://localhost:3000/UserCollectionRoute/login",
+    //     {
+    //       username,
+    //       password,
+    //     }
+    //   );
+
+    //   // Assuming the response contains the username
+    //   const user = response.data.username;
+
+    //   if (user) {
+    //     // Navigate to AdminDashboard and pass the username
+    //     navigate("/AdminDashboard", { state: { username: user } });
+    //   } else {
+    //     // Handle unexpected response
+    //     setError("Login failed. Please try again.");
+    //   }
+    // } catch (err) {
+    //   console.error("Login failed", err);
+    //   setError("Login failed. Please check your username and password.");
+    // }
+    
     navigate("/AdminDashboard");
   };
 
